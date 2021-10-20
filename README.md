@@ -17,3 +17,4 @@
 - [ ] Blog CRUD
 - [ ] Testing: Jest and React Testing Library
 - [ ] E2E Testing: Cypress
+- [ ] Docker
