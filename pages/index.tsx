@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+import NewsList from "components/NewsList";
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -53,6 +55,7 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
+        <NewsList />
       </main>
 
       <footer className={styles.footer}>
