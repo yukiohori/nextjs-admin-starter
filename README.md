@@ -3,3 +3,15 @@
 - NextJs
 - Supabase
 - TailwindCSS
+- Recoil
+
+## Design
+
+- Atomic Design
+
+## ToDo List
+
+- [x] Github Auth Login
+- [ ] Dashboard
+- [ ] Profile (Edit, upload Profile Image)
+- [ ] Blog CRUD
