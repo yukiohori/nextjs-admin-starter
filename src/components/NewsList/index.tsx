@@ -1,6 +1,6 @@
-import { supabase } from "lib/supabaseClient";
+import { supabase } from "src/lib/supabaseClient";
 import { useEffect, useState } from "react";
-import type { NewsType } from "type/news";
+import type { NewsType } from "src/type/news";
 
 const NewsList = () => {
   const [news, setNews] = useState<Array<NewsType>>([]);
