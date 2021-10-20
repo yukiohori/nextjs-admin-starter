@@ -1,11 +1,15 @@
-## nextjs-supabase-admin-starter
+## Description
+
+This is my own Admin Project starter.
+
+## Environment
 
 - NextJs
 - Supabase
 - TailwindCSS
 - Recoil
 
-## Design
+## Design Structure
 
 - Atomic Design
 
