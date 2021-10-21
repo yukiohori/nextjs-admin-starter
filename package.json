@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/react": "17.0.30",
     "autoprefixer": "^10.3.7",
+    "cypress": "^8.6.0",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.9",
