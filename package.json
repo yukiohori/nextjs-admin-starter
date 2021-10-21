@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "repository": {
     "type": "git",
@@ -30,12 +32,18 @@
     "recoil-persist": "^3.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/react": "17.0.30",
     "autoprefixer": "^10.3.7",
+    "babel-jest": "^27.3.1",
     "cypress": "^8.6.0",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
+    "jest": "^27.3.1",
     "postcss": "^8.3.9",
+    "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.2.17",
     "typescript": "4.4.4"
   }
