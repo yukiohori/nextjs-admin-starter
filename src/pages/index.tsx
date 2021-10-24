@@ -15,15 +15,19 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full h-screen flex items-center justify-center">
-        <h1>Login</h1>
-        <div>
-          {session ? (
-            <button onClick={() => signOut()}>
-              {user && user.fullname} サインアウト
-            </button>
-          ) : (
-            <button onClick={() => signInWithGithub()}>GitHubでログイン</button>
-          )}
+        <div className="p-4 rounded border flex flex-col items-center justify-center bg-gray-600 text-white">
+          <h1>Login</h1>
+          <div>
+            {session ? (
+              <button onClick={() => signOut()}>
+                {user && user.fullname} サインアウト
+              </button>
+            ) : (
+              <button onClick={() => signInWithGithub()}>
+                GitHubでログイン
+              </button>
+            )}
+          </div>
         </div>
       </main>
       <footer className="h-10 -mt-10 flex justify-center items-center bg-gray-700 text-white">
