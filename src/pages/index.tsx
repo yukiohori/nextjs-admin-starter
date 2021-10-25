@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import useUser from "src/hooks/useUser";
+import Dashboard from "src/components/organisms/Dashboard";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -23,9 +24,7 @@ const Home: NextPage = () => {
                 {user && user.fullname} サインアウト
               </button>
             ) : (
-              <button onClick={() => signInWithGithub()}>
-                GitHubでログイン
-              </button>
+              <Dashboard />
             )}
           </div>
         </div>
