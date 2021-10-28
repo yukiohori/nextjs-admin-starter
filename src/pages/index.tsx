@@ -1,13 +1,32 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import useUser from "src/hooks/useUser";
-import Dashboard from "src/components/organisms/Dashboard";
-import Footer from "src/components/organisms/Footer";
+
+import { useRouter } from "next/router";
+import { supabase } from "src/lib//supabaseClient";
+import { Button } from "src/components/atoms/Button";
+
+import Template from "src/components/templates/Template";
+import { useEffect, useState } from "react";
+import Spinner from "src/components/atoms/Spinner";
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const { session, user, signOut, signInWithGithub } = useUser();
+  const { signInWithGithub } = useUser();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (supabase.auth.session()) {
+      router.push("/dashboard");
+    } else {
+      setIsLoading(false);
+    }
+  }, [router]);
+
+  const loginWithGithub = () => {
+    setIsLoading(true);
+    signInWithGithub();
+  };
 
   return (
     <div>
@@ -16,24 +35,21 @@ const Home: NextPage = () => {
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full h-screen flex items-center justify-center overflow-hidden">
-        {session ? (
-          <button onClick={() => signOut()}>
-            {user && user.fullname} Sign out
-          </button>
+      <Template>
+        {isLoading ? (
+          <Spinner />
         ) : (
-          <Dashboard signInWithGithub={signInWithGithub} />
+          <div className="z-10 p-4 bg-white bg-opacity-50 rounded">
+            <h1 className="text-center mb-4 font-bold text-gray-600">LOGIN</h1>
+            <Button
+              label="LOGIN WITH GITHUB"
+              textFormat="text-gray-600 font-bold"
+              borderFormat="rounded-md border-2 border-gray-600"
+              onClick={() => loginWithGithub()}
+            />
+          </div>
         )}
-      </main>
-      <Footer>
-        <a
-          href="https://github.com/yukiohori"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by YUKI OHORI
-        </a>
-      </Footer>
+      </Template>
     </div>
   );
 };

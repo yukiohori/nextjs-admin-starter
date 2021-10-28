@@ -1,10 +1,10 @@
 export type Props = {
-  animate: boolean;
-  size: string;
-  styleFormat: string;
+  animate?: boolean;
+  size?: string;
+  styleFormat?: string;
 };
 
-export const Spinner = ({
+const Spinner = ({
   animate = true,
   size = "w-24 h-24",
   styleFormat = "",
@@ -30,3 +30,5 @@ export const Spinner = ({
     </svg>
   );
 };
+
+export default Spinner;

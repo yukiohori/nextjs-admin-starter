@@ -1,15 +1,21 @@
 import { AuthChangeEvent, Session } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { supabase } from "src/lib//supabaseClient";
-import type { UserType } from "src/type/user";
+import { useRouter } from "next/router";
+import type { UserType } from "src/types/UserType";
 
 const useUser = () => {
+  const router = useRouter();
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<UserType | null>(null);
+
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (_: AuthChangeEvent, session: Session | null) => {
-        if (session) setSession(session);
+        if (session) {
+          setSession(session);
+        } else {
+        }
       }
     );
     return () => {
@@ -32,7 +38,10 @@ const useUser = () => {
   }, [session]);
 
   const signInWithGithub = () => {
-    supabase.auth.signIn({ provider: "github" });
+    supabase.auth.signIn(
+      { provider: "github" },
+      { redirectTo: "http://localhost:3000/dashboard" }
+    );
   };
 
   const signOut = () => {
