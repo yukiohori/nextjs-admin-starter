@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full h-screen flex items-center justify-center">
+      <main className="w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="p-4 rounded border flex flex-col items-center justify-center bg-gray-600 text-white">
           <h1>Login</h1>
           <div>
@@ -24,12 +24,12 @@ const Home: NextPage = () => {
                 {user && user.fullname} サインアウト
               </button>
             ) : (
-              <Dashboard />
+              <Dashboard signInWithGithub={signInWithGithub} />
             )}
           </div>
         </div>
       </main>
-      <footer className="h-10 -mt-10 flex justify-center items-center bg-gray-700 text-white">
+      <footer className="fixed left-0 w-full bottom-0 h-10 -mt-10 flex justify-center items-center bg-gray-700 text-white">
         <a
           href="https://github.com/yukiohori"
           target="_blank"
