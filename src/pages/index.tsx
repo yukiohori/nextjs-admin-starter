@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import useUser from "src/hooks/useUser";
 import Dashboard from "src/components/organisms/Dashboard";
+import Footer from "src/components/organisms/Footer";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -16,20 +17,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full h-screen flex items-center justify-center overflow-hidden">
-        <div className="p-4 rounded border flex flex-col items-center justify-center bg-gray-600 text-white">
-          <h1>Login</h1>
-          <div>
-            {session ? (
-              <button onClick={() => signOut()}>
-                {user && user.fullname} サインアウト
-              </button>
-            ) : (
-              <Dashboard signInWithGithub={signInWithGithub} />
-            )}
-          </div>
-        </div>
+        {session ? (
+          <button onClick={() => signOut()}>
+            {user && user.fullname} Sign out
+          </button>
+        ) : (
+          <Dashboard signInWithGithub={signInWithGithub} />
+        )}
       </main>
-      <footer className="fixed left-0 w-full bottom-0 h-10 -mt-10 flex justify-center items-center bg-gray-700 text-white">
+      <Footer>
         <a
           href="https://github.com/yukiohori"
           target="_blank"
@@ -37,7 +33,7 @@ const Home: NextPage = () => {
         >
           Powered by YUKI OHORI
         </a>
-      </footer>
+      </Footer>
     </div>
   );
 };
