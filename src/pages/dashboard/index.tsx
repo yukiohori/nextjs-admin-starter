@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { supabase } from "src/lib//supabaseClient";
+import { supabase } from "src/lib/supabaseClient";
 import Template from "src/components/templates/Template";
 import { useEffect, useState } from "react";
 
@@ -18,7 +18,7 @@ const Dashboard: NextPage = () => {
         router.push("/");
       }
     });
-  }, [router]);
+  }, [router, session]);
 
   const logOut = () => {
     supabase.auth.signOut();
@@ -34,7 +34,13 @@ const Dashboard: NextPage = () => {
       </Head>
       <Template>
         {session && (
-          <button onClick={() => logOut()}>{session.user.id} Sign out</button>
+          <button
+            onClick={() => {
+              logOut();
+            }}
+          >
+            {session.user.id} Sign out
+          </button>
         )}
       </Template>
     </div>

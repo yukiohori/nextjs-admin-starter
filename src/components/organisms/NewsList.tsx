@@ -13,7 +13,6 @@ const NewsList = () => {
     const { data: news, error } = await supabase
       .from<NewsType>("news")
       .select("*");
-
     if (error) console.log("error", error);
     else setNews(news!);
   };

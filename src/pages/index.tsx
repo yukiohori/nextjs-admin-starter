@@ -3,7 +3,7 @@ import Head from "next/head";
 import useUser from "src/hooks/useUser";
 
 import { useRouter } from "next/router";
-import { supabase } from "src/lib//supabaseClient";
+import { supabase } from "src/lib/supabaseClient";
 import { Button } from "src/components/atoms/Button";
 
 import Template from "src/components/templates/Template";
