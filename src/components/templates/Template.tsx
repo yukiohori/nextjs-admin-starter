@@ -10,7 +10,11 @@ const Template = ({ children }: Props) => {
   return (
     <>
       <main
-        style={{ backgroundImage: `url(${bgImage.src})` }}
+        style={{
+          backgroundImage: `url(${bgImage.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         className="relative w-full h-screen flex items-center justify-center overflow-hidden"
       >
         {children}

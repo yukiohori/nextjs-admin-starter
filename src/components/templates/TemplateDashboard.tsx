@@ -42,7 +42,11 @@ const TemplateDashboard = ({ children }: Props) => {
         </div>
       </Header>
       <main
-        style={{ backgroundImage: `url(${bgImage.src})` }}
+        style={{
+          backgroundImage: `url(${bgImage.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         className="relative w-full h-screen overflow-hidden"
       >
         {children}
