@@ -1,5 +1,6 @@
 import Footer from "src/components/organisms/Footer";
 import bgImage from "public/images/bg-image.jpg";
+import { FOOTER_TEXT } from "src/utils/constants";
 
 type Props = {
   children: React.ReactNode;
@@ -20,7 +21,7 @@ const Template = ({ children }: Props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by YUKI OHORI
+          {FOOTER_TEXT}
         </a>
       </Footer>
     </>

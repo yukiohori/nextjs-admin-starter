@@ -1,30 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { supabase } from "src/lib/supabaseClient";
-import Template from "src/components/templates/Template";
-import { useEffect, useState } from "react";
+import TemplateDashboard from "src/components/templates/TemplateDashboard";
+import SideMenu from "src/components/molecules/SideMenu";
 
 const Dashboard: NextPage = () => {
-  const router = useRouter();
-  const [session, setSession] = useState<any>(null);
-
-  useEffect(() => {
-    setSession(supabase.auth.session());
-    supabase.auth.onAuthStateChange((_event, session) => {
-      if (session) {
-        setSession(session);
-      } else {
-        router.push("/");
-      }
-    });
-  }, [router, session]);
-
-  const logOut = () => {
-    supabase.auth.signOut();
-    router.push("/");
-  };
-
   return (
     <div>
       <Head>
@@ -32,17 +11,16 @@ const Dashboard: NextPage = () => {
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Template>
-        {session && (
-          <button
-            onClick={() => {
-              logOut();
-            }}
-          >
-            {session.user.id} Sign out
-          </button>
-        )}
-      </Template>
+      <TemplateDashboard>
+        <div className="flex py-20 px-6 space-x-4">
+          <div className="hidden lg:block w-full lg:w-1/4">
+            <SideMenu />
+          </div>
+          <div className="w-full lg:w-3/4">
+            <div className="w-full flex flex-col space-y-4 text-white bg-gray-600 rounded p-4"></div>
+          </div>
+        </div>
+      </TemplateDashboard>
     </div>
   );
 };
