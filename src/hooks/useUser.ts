@@ -1,11 +1,9 @@
 import { AuthChangeEvent, Session } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { supabase } from "src/lib//supabaseClient";
-import { useRouter } from "next/router";
 import type { UserType } from "src/types/UserType";
 
 const useUser = () => {
-  const router = useRouter();
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<UserType | null>(null);
 

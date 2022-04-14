@@ -14,7 +14,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@material-tailwind/react": "^0.3.4",
     "@supabase/supabase-js": "^1.33.3",
+    "chart.js": "^3.7.1",
     "next": "^12.1.4",
     "next-seo": "^5.4.0",
     "react": "^17.0.2",
