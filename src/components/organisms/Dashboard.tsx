@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { Button } from "src/components/atoms/Button";
-import bgImage from "public/images/bg-image.jpg";
+import Image from 'next/image';
+import bgImage from 'public/images/bg-image.jpg';
+import { Button } from 'src/components/atoms/Button';
 
 type Props = {
   signInWithGithub: () => void;
@@ -8,9 +8,9 @@ type Props = {
 
 const Dashboard = ({ signInWithGithub }: Props) => {
   return (
-    <div className="w-screen h-screen overflow-hidden flex items-center justify-center">
-      <div className="z-10 p-4 bg-white bg-opacity-50 rounded">
-        <h1 className="text-center mb-4 font-bold text-gray-600">LOGIN</h1>
+    <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
+      <div className="z-10 rounded bg-white bg-opacity-50 p-4">
+        <h1 className="mb-4 text-center font-bold text-gray-600">LOGIN</h1>
         <Button
           label="LOGIN WITH GITHUB"
           textFormat="text-gray-600 font-bold"

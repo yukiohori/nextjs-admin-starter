@@ -1,14 +1,12 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import useUser from "src/hooks/useUser";
-
-import { useRouter } from "next/router";
-import { supabase } from "src/lib/supabaseClient";
-import { Button } from "src/components/atoms/Button";
-
-import Template from "src/components/templates/Template";
-import { useEffect, useState } from "react";
-import Spinner from "src/components/atoms/Spinner";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { Button } from 'src/components/atoms/Button';
+import Spinner from 'src/components/atoms/Spinner';
+import Template from 'src/components/templates/Template';
+import useUser from 'src/hooks/useUser';
+import { supabase } from 'src/lib/supabaseClient';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -17,7 +15,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (supabase.auth.session()) {
-      router.push("/dashboard");
+      router.push('/dashboard');
     } else {
       setIsLoading(false);
     }
@@ -39,8 +37,8 @@ const Home: NextPage = () => {
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="z-10 p-4 bg-white bg-opacity-50 rounded">
-            <h1 className="text-center mb-4 font-bold text-gray-600">LOGIN</h1>
+          <div className="z-10 rounded bg-white/50 p-4">
+            <h1 className="mb-4 text-center font-bold text-gray-600">LOGIN</h1>
             <Button
               label="LOGIN WITH GITHUB"
               textFormat="text-gray-600 font-bold"

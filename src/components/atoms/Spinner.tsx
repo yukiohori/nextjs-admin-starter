@@ -6,12 +6,12 @@ export type Props = {
 
 const Spinner = ({
   animate = true,
-  size = "w-24 h-24",
-  styleFormat = "",
+  size = 'w-24 h-24',
+  styleFormat = '',
 }: Props) => {
   return (
     <svg
-      className={`${animate ? "animate-spin" : ""} ${size} ${styleFormat}`}
+      className={`${animate ? 'animate-spin' : ''} ${size} ${styleFormat}`}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

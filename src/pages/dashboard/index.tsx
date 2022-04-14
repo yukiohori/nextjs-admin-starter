@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import TemplateDashboard from "src/components/templates/TemplateDashboard";
-import SideMenu from "src/components/molecules/SideMenu";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import SideMenu from 'src/components/molecules/SideMenu';
+import TemplateDashboard from 'src/components/templates/TemplateDashboard';
 
 const Dashboard: NextPage = () => {
   return (
@@ -12,12 +12,12 @@ const Dashboard: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TemplateDashboard>
-        <div className="flex py-20 px-6 space-x-4">
-          <div className="hidden lg:block w-full lg:w-1/4">
+        <div className="flex space-x-4 py-20 px-6">
+          <div className="hidden w-full lg:block lg:w-1/4">
             <SideMenu />
           </div>
           <div className="w-full lg:w-3/4">
-            <div className="w-full flex flex-col space-y-4 text-white bg-gray-600 rounded p-4"></div>
+            <div className="flex w-full flex-col space-y-4 rounded bg-gray-600 p-4 text-white"></div>
           </div>
         </div>
       </TemplateDashboard>

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type Props = {
   styleFormat?: string;
@@ -10,14 +10,14 @@ export type Props = {
 export const Icon = ({
   rounded = true,
   children,
-  styleFormat = "w-8",
+  styleFormat = 'w-8',
   onClick,
 }: Props) => {
   return (
     <div
       onClick={onClick}
-      className={`p-1 ${rounded ? "rounded-full" : ""} ${styleFormat} ${
-        onClick && "cursor-pointer"
+      className={`p-1 ${rounded ? 'rounded-full' : ''} ${styleFormat} ${
+        onClick && 'cursor-pointer'
       }`}
     >
       {children}

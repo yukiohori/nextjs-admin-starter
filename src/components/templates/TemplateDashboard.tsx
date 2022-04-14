@@ -1,10 +1,10 @@
-import Header from "src/components/organisms/Header";
-import Footer from "src/components/organisms/Footer";
-import bgImage from "public/images/bg-image.jpg";
-import { FOOTER_TEXT } from "src/utils/constants";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { supabase } from "src/lib/supabaseClient";
+import { useRouter } from 'next/router';
+import bgImage from 'public/images/bg-image.jpg';
+import { useEffect, useState } from 'react';
+import Footer from 'src/components/organisms/Footer';
+import Header from 'src/components/organisms/Header';
+import { supabase } from 'src/lib/supabaseClient';
+import { FOOTER_TEXT } from 'src/utils/constants';
 
 type Props = {
   children: React.ReactNode;
@@ -16,18 +16,18 @@ const TemplateDashboard = ({ children }: Props) => {
 
   useEffect(() => {
     setSession(supabase.auth.session());
-    supabase.auth.onAuthStateChange((_event, session) => {
-      if (session) {
-        setSession(session);
+    supabase.auth.onAuthStateChange((_event, sessionData) => {
+      if (sessionData) {
+        setSession(sessionData);
       } else {
-        router.push("/");
+        router.push('/');
       }
     });
   }, [router, session]);
 
   const logOut = () => {
     supabase.auth.signOut();
-    router.push("/");
+    router.push('/');
   };
   return (
     <>
@@ -44,10 +44,10 @@ const TemplateDashboard = ({ children }: Props) => {
       <main
         style={{
           backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
-        className="relative w-full h-screen overflow-hidden"
+        className="relative h-screen w-full overflow-hidden"
       >
         {children}
       </main>

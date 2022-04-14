@@ -4,7 +4,7 @@ type Props = {
 
 const Footer = ({ children }: Props) => {
   return (
-    <footer className="fixed left-0 w-full bottom-0 h-10 -mt-10 flex justify-center items-center bg-gray-700 text-white">
+    <footer className="fixed left-0 bottom-0 -mt-10 flex h-10 w-full items-center justify-center bg-gray-700 text-white">
       {children}
     </footer>
   );
