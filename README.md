@@ -19,6 +19,4 @@ This is my own Admin Project starter.
 - [ ] Dashboard
 - [ ] Profile (Edit, upload Profile Image)
 - [ ] Blog CRUD
-- [x] Testing: Jest and React Testing Library
-- [x] E2E Testing: Cypress
 - [ ] Docker

@@ -25,22 +25,13 @@ const TemplateDashboard = ({ children }: Props) => {
     });
   }, [router, session]);
 
-  const logOut = () => {
-    supabase.auth.signOut();
-    router.push('/');
-  };
+  // const logOut = () => {
+  //   supabase.auth.signOut();
+  //   router.push('/');
+  // };
   return (
     <>
-      <Header>
-        <div className="flex justify-between">
-          <p>LOGO</p>
-          {session && (
-            <span className="cursor-pointer">
-              <p onClick={logOut}>{session.user.email} LOGOUT</p>
-            </span>
-          )}
-        </div>
-      </Header>
+      <Header />
       <main
         style={{
           backgroundImage: `url(${bgImage.src})`,

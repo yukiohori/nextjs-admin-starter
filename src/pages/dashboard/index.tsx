@@ -17,7 +17,14 @@ const Dashboard: NextPage = () => {
             <SideMenu />
           </div>
           <div className="w-full lg:w-3/4">
-            <div className="flex w-full flex-col space-y-4 rounded bg-gray-600 p-4 text-white"></div>
+            <div className="flex w-full flex-col space-y-4 rounded bg-gray-600 p-4 text-white">
+              <div className="mockup-phone">
+                <div className="camera"></div>
+                <div className="display">
+                  <div className="phone-1 artboard artboard-demo">Hi.</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </TemplateDashboard>
