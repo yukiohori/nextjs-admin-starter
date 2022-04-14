@@ -9,7 +9,7 @@ type Props = {
 const Dashboard = ({ signInWithGithub }: Props) => {
   return (
     <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
-      <div className="z-10 rounded bg-white bg-opacity-50 p-4">
+      <div className="z-10 rounded bg-white/50 p-4">
         <h1 className="mb-4 text-center font-bold text-gray-600">LOGIN</h1>
         <Button
           label="LOGIN WITH GITHUB"

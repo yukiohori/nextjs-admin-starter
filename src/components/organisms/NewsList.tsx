@@ -9,6 +9,7 @@ const NewsList = () => {
     const { data: newsList, error } = await supabase
       .from<NewsType>('news')
       .select('*');
+    // eslint-disable-next-line no-console
     if (error) console.log('error', error);
     else setNews(newsList!);
   };

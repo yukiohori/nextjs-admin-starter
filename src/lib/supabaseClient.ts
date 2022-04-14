@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+  // eslint-disable-next-line no-console
   console.log('Make sure you have a `.env` file to populate your variables.');
 }
 

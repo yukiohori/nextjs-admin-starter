@@ -4,8 +4,8 @@ export type Props = {
 
 const Header = ({ children }: Props) => {
   return (
-    <div className="fixed z-50 left-0 top-0 w-screen overflow-hidden">
-      <div className="bg-gray-700 w-full p-4 text-white relative">
+    <div className="fixed left-0 top-0 z-50 w-screen overflow-hidden">
+      <div className="relative w-full bg-gray-700 p-4 text-white">
         {children}
       </div>
     </div>
