@@ -7,7 +7,6 @@ This is my own Admin Project starter.
 - NextJs
 - Supabase
 - TailwindCSS
-- Recoil
 
 ## Design Structure
 
