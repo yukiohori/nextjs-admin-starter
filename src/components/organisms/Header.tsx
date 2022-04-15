@@ -19,6 +19,12 @@ const Header = () => {
               />
             </svg>
           </label>
+          <label
+            htmlFor="my-drawer-4"
+            className="btn btn-primary drawer-button"
+          >
+            Open drawer
+          </label>
           <ul
             tabIndex={0}
             className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"

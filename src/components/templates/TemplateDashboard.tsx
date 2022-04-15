@@ -31,7 +31,6 @@ const TemplateDashboard = ({ children }: Props) => {
   // };
   return (
     <>
-      <Header />
       <main
         style={{
           backgroundImage: `url(${bgImage.src})`,
@@ -40,6 +39,7 @@ const TemplateDashboard = ({ children }: Props) => {
         }}
         className="relative h-screen w-full overflow-hidden"
       >
+        <Header />
         {children}
       </main>
       <Footer>

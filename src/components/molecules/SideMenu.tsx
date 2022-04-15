@@ -3,9 +3,9 @@ const SideMenu = () => {
     <div className="drawer drawer-end">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <label htmlFor="my-drawer-4" className="btn btn-primary drawer-button">
+        {/* <label htmlFor="my-drawer-4" className="btn btn-primary drawer-button">
           Open drawer
-        </label>
+        </label> */}
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
