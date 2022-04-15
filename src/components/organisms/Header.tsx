@@ -1,12 +1,17 @@
-const Header = () => {
+type HeaderProps = {
+  logOut: () => void;
+  email: string;
+};
+
+const Header = ({ logOut, email }: HeaderProps) => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar fixed z-50 bg-base-100">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle">
+          <label htmlFor="my-drawer-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -19,30 +24,10 @@ const Header = () => {
               />
             </svg>
           </label>
-          <label
-            htmlFor="my-drawer-4"
-            className="btn btn-primary drawer-button"
-          >
-            Open drawer
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
-          >
-            <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-          </ul>
-        </div>
+        </button>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl normal-case">daisyUI</a>
+        <a className="btn btn-ghost text-xl normal-case">DASHBOARD</a>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
@@ -80,6 +65,38 @@ const Header = () => {
             <span className="badge badge-xs indicator-item badge-primary"></span>
           </div>
         </button>
+        <div className="dropdown-end dropdown">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+          >
+            <li>
+              <a>{email}</a>
+            </li>
+            <li>
+              <a>Portfolio</a>
+            </li>
+            <li onClick={logOut}>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
