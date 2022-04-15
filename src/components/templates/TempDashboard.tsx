@@ -1,18 +1,17 @@
 import { useRouter } from 'next/router';
 import bgImage from 'public/images/bg-image.jpg';
 import { useCallback, useEffect, useState } from 'react';
+import SideMenu from 'src/components/molecules/SideMenu';
 import Footer from 'src/components/organisms/Footer';
 import Header from 'src/components/organisms/Header';
 import { supabase } from 'src/lib/supabaseClient';
 import { FOOTER_TEXT } from 'src/utils/constants';
 
-import SideMenu from '../molecules/SideMenu';
-
 type Props = {
   children: React.ReactNode;
 };
 
-const TemplateDashboard = ({ children }: Props) => {
+const TempDashboard = ({ children }: Props) => {
   const router = useRouter();
   const [session, setSession] = useState<any>(null);
 
@@ -32,8 +31,6 @@ const TemplateDashboard = ({ children }: Props) => {
     router.push('/');
   }, []);
 
-  console.log(session);
-
   return (
     <div
       style={{
@@ -42,6 +39,7 @@ const TemplateDashboard = ({ children }: Props) => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
+      className="h-full"
     >
       <Header logOut={logOut} email={session?.user?.email ?? ''} />
       <SideMenu />
@@ -59,4 +57,4 @@ const TemplateDashboard = ({ children }: Props) => {
   );
 };
 
-export default TemplateDashboard;
+export default TempDashboard;

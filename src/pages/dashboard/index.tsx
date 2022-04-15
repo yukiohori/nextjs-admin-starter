@@ -1,16 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import TemplateDashboard from 'src/components/templates/TemplateDashboard';
+
+import TempDashboard from '@/components/templates/TempDashboard';
 
 const Dashboard: NextPage = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Head>
         <title>NextJS ADMIN STARTER</title>
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TemplateDashboard>
+      <TempDashboard>
         <div className="mockup-phone">
           <div className="camera"></div>
           <div className="display">
@@ -39,7 +40,7 @@ const Dashboard: NextPage = () => {
           </div>
         </div>
         <br />
-      </TemplateDashboard>
+      </TempDashboard>
     </div>
   );
 };

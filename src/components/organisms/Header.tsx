@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type HeaderProps = {
   logOut: () => void;
   email: string;
@@ -7,27 +9,32 @@ const Header = ({ logOut, email }: HeaderProps) => {
   return (
     <div className="navbar fixed z-50 bg-base-100">
       <div className="navbar-start">
-        <button className="btn btn-ghost btn-circle">
-          <label htmlFor="my-drawer-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 cursor-pointer"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </label>
+        <button
+          onClick={() => {
+            document.getElementById('side_menu')?.click();
+          }}
+          className="btn btn-ghost btn-circle"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 cursor-pointer"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h7"
+            />
+          </svg>
         </button>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl normal-case">DASHBOARD</a>
+        <Link href="/dashboard">
+          <a className="btn btn-ghost text-xl normal-case">DASHBOARD</a>
+        </Link>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
@@ -88,9 +95,6 @@ const Header = ({ logOut, email }: HeaderProps) => {
           >
             <li>
               <a>{email}</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
             </li>
             <li onClick={logOut}>
               <a>Logout</a>
