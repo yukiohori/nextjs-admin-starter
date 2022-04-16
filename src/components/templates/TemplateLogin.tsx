@@ -1,6 +1,7 @@
 import bgImage from 'public/images/bg-image.jpg';
-import Footer from 'src/components/organisms/Footer';
 import { FOOTER_TEXT } from 'src/utils/constants';
+
+import Footer from '@/components/organisms/Footer';
 
 type Props = {
   children: React.ReactNode;

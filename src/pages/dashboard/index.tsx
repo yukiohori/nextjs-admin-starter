@@ -18,28 +18,6 @@ const Dashboard: NextPage = () => {
             <div className="phone-1 artboard artboard-demo">Hi.</div>
           </div>
         </div>
-        <br />
-        <div className="mockup-phone">
-          <div className="camera"></div>
-          <div className="display">
-            <div className="phone-1 artboard artboard-demo">Hi.</div>
-          </div>
-        </div>
-        <br />
-        <div className="mockup-phone">
-          <div className="camera"></div>
-          <div className="display">
-            <div className="phone-1 artboard artboard-demo">Hi.</div>
-          </div>
-        </div>
-        <br />
-        <div className="mockup-phone">
-          <div className="camera"></div>
-          <div className="display">
-            <div className="phone-1 artboard artboard-demo">Hi.</div>
-          </div>
-        </div>
-        <br />
       </TempDashboard>
     </div>
   );

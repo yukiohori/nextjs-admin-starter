@@ -6,8 +6,21 @@ const SideMenu = () => {
       <input id="side_menu" type="checkbox" className="drawer-toggle" />
       <div className="drawer-side">
         <label htmlFor="side_menu" className="drawer-overlay"></label>
-        <ul className="menu w-80 overflow-y-auto bg-base-100 p-4 pt-24 text-base-content">
-          <li>
+        <ul className="menu w-80 overflow-y-auto bg-base-100/95 p-4 pt-24 text-base-content">
+          <li
+            onClick={() => {
+              document.getElementById('side_menu')?.click();
+            }}
+          >
+            <Link href="/dashboard/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              document.getElementById('side_menu')?.click();
+            }}
+          >
             <Link href="/dashboard/notification">
               <a>Notification</a>
             </Link>

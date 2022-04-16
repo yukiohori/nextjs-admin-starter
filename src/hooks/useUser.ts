@@ -1,7 +1,9 @@
 import { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
-import { supabase } from 'src/lib//supabaseClient';
-import type { UserType } from 'src/types/UserType';
+
+import { supabase } from '@/lib//supabaseClient';
+import type { UserType } from '@/types/UserType';
+import { SUPABASE_REDIRECT } from '@/utils/constants';
 
 const useUser = () => {
   const [session, setSession] = useState<Session | null>(null);
@@ -37,7 +39,7 @@ const useUser = () => {
   const signInWithGithub = () => {
     supabase.auth.signIn(
       { provider: 'github' },
-      { redirectTo: 'http://localhost:3000/dashboard' }
+      { redirectTo: SUPABASE_REDIRECT }
     );
   };
 
