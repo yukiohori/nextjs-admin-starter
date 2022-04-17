@@ -41,6 +41,7 @@ const NewsList = () => {
         <p>News List</p>
         <button
           onClick={() => {
+            reset();
             setValue('id', undefined);
             document.getElementById('modal')?.click();
           }}
@@ -177,24 +178,32 @@ const NewsList = () => {
       <Modal>
         <h3 className="mb-4">ADD NEWS</h3>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+          <input type="hidden" {...register('id')} />
           <label className="label">
             <span className="label-text">Title*</span>
+            {errors.title && (
+              <span className="label-text-alt text-sm text-red-500">
+                This field is required
+              </span>
+            )}
           </label>
-          <input type="hidden" {...register('id')} />
-          {errors.title && <span>This field is required</span>}
           <input
             type="text"
-            placeholder="Type here"
+            placeholder="Title"
             className="input-bordered input mb-2 w-full"
             {...register('title', { required: true })}
           />
           <label className="label">
             <span className="label-text">Content*</span>
+            {errors.content && (
+              <span className="text-sm text-red-500">
+                This field is required
+              </span>
+            )}
           </label>
-          {errors.content && <span>This field is required</span>}
           <textarea
             className="textarea-bordered textarea mb-6 w-full"
-            placeholder=""
+            placeholder="Content"
             {...register('content', { required: true })}
           ></textarea>
           <button type="submit" className="btn w-full">
