@@ -10,7 +10,10 @@ const useUser = () => {
   const [selectedList, setSelectedList] = useState<number[]>([]);
 
   const fetchNewsList = useCallback(async () => {
-    const { data: news, error } = await supabase.from('news').select('*');
+    const { data: news, error } = await supabase
+      .from('news')
+      .select('*')
+      .order('id', { ascending: false });
     // eslint-disable-next-line no-console
     if (error) console.log('error', error);
     else setNewsList(news);

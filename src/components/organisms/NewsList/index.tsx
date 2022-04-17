@@ -6,6 +6,7 @@ import { useEffectOnce } from 'react-use';
 import Modal from '@/components/atoms/Modal';
 import Spinner from '@/components/atoms/Spinner';
 import useNews from '@/hooks/useNews';
+import { NewsFormType } from '@/types/NewsType';
 
 const NewsList = () => {
   const {
@@ -14,7 +15,7 @@ const NewsList = () => {
     setValue,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<NewsFormType>();
   const {
     newsList,
     selectedList,
@@ -122,7 +123,7 @@ const NewsList = () => {
                 <input
                   type="checkbox"
                   checked={selectedList.includes(news.id)}
-                  className="checkbox-primary checkbox"
+                  className="checkbox"
                   onChange={() => selectDeleteNews(news.id)}
                 />
               </td>
