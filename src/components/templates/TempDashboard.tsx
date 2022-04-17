@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import bgImage from 'public/images/bg-image.jpg';
 import { useCallback, useEffect, useState } from 'react';
 import SideMenu from 'src/components/molecules/SideMenu';
 import { supabase } from 'src/lib/supabaseClient';
@@ -61,15 +60,7 @@ const TempDashboard = ({ children }: Props) => {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bgImage.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
-      className="h-full"
-    >
+    <div className="h-full bg-gray-700/30">
       {session && (
         <>
           <Header logOut={logOut} email={session?.user?.email ?? ''} />

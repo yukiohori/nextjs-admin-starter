@@ -1,4 +1,3 @@
-import bgImage from 'public/images/bg-image.jpg';
 import { FOOTER_TEXT } from 'src/utils/constants';
 
 import Footer from '@/components/organisms/Footer';
@@ -9,15 +8,8 @@ type Props = {
 
 const Template = ({ children }: Props) => {
   return (
-    <>
-      <main
-        style={{
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        className="relative flex h-screen w-full items-center justify-center overflow-hidden"
-      >
+    <div className="h-full bg-gray-700/30">
+      <main className="relative flex h-screen w-full items-center justify-center overflow-hidden">
         {children}
       </main>
       <Footer>
@@ -29,7 +21,7 @@ const Template = ({ children }: Props) => {
           {FOOTER_TEXT}
         </a>
       </Footer>
-    </>
+    </div>
   );
 };
 

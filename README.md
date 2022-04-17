@@ -18,4 +18,4 @@ This is my own Admin Project starter.
 - [ ] Dashboard
 - [ ] Profile (Edit, upload Profile Image)
 - [ ] Blog CRUD
-- [ ] Docker
+- [ ] Notification
