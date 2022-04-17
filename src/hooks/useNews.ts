@@ -18,9 +18,7 @@ const useUser = () => {
 
   const upsertNews = useCallback(async (data) => {
     dispatch({ type: 'START_LOADING' });
-    const { error } = await supabase
-      .from('news')
-      .upsert([{ title: data.title, content: data.content }]);
+    const { error } = await supabase.from('news').upsert([data]);
     // eslint-disable-next-line no-console
     if (error) console.log('error', error);
     else {
