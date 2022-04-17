@@ -16,7 +16,21 @@ const useUser = () => {
     else setNewsList(news);
   }, []);
 
+  const upsertNews = useCallback(async (data) => {
+    dispatch({ type: 'START_LOADING' });
+    const { error } = await supabase
+      .from('news')
+      .upsert([{ title: data.title, content: data.content }]);
+    // eslint-disable-next-line no-console
+    if (error) console.log('error', error);
+    else {
+      await fetchNewsList();
+    }
+    dispatch({ type: 'STOP_LOADING' });
+  }, []);
+
   const deleteNews = useCallback(async () => {
+    if (!selectedList.length) return;
     dispatch({ type: 'START_LOADING' });
     await Promise.all(
       selectedList.map(async (id) => {
@@ -26,6 +40,7 @@ const useUser = () => {
       })
     );
     await fetchNewsList();
+    setSelectedList([]);
     dispatch({ type: 'STOP_LOADING' });
   }, [selectedList]);
 
@@ -45,6 +60,7 @@ const useUser = () => {
     fetchNewsList,
     selectDeleteNews,
     deleteNews,
+    upsertNews,
   };
 };
 

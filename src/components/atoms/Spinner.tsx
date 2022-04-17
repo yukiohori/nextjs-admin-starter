@@ -1,4 +1,4 @@
-export type Props = {
+export type SpinnerProps = {
   animate?: boolean;
   size?: string;
   styleFormat?: string;
@@ -8,7 +8,7 @@ const Spinner = ({
   animate = true,
   size = 'w-24 h-24',
   styleFormat = '',
-}: Props) => {
+}: SpinnerProps) => {
   return (
     <svg
       className={`${animate ? 'animate-spin' : ''} ${size} ${styleFormat}`}
