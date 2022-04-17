@@ -5,7 +5,13 @@ import Spinner from '@/components/atoms/Spinner';
 import useNews from '@/hooks/useNews';
 
 const NewsList = () => {
-  const { newsList, selectedList, selectDeleteNews, fetchNewsList } = useNews();
+  const {
+    newsList,
+    selectedList,
+    selectDeleteNews,
+    fetchNewsList,
+    deleteNews,
+  } = useNews();
 
   useEffectOnce(() => {
     fetchNewsList();
@@ -13,7 +19,9 @@ const NewsList = () => {
 
   return newsList ? (
     <div className="overflow-x-auto">
-      <div className="flex w-full">DELETE</div>
+      <div className="flex w-full">
+        <button onClick={deleteNews}>DELETE</button>
+      </div>
       <table className="mt-6 table w-full">
         <thead>
           <tr>
