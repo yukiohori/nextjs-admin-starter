@@ -45,16 +45,18 @@ const TempDashboard = ({ children }: Props) => {
     return isLoading ? (
       <Spinner />
     ) : (
-      <div className="z-10 rounded bg-white/50 p-4">
-        <h1 className="mb-4 text-center font-bold text-gray-600">LOGIN</h1>
-        <button
-          onClick={() => {
-            loginWithGithub();
-          }}
-          className="btn btn-active"
-        >
-          LOGIN WITH GITHUB
-        </button>
+      <div className="mockup-code">
+        <h1 className="mb-4 text-center text-2xl font-bold">LOGIN</h1>
+        <div className="flex w-full items-center justify-center">
+          <button
+            onClick={() => {
+              loginWithGithub();
+            }}
+            className="btn btn-active"
+          >
+            LOGIN WITH GITHUB
+          </button>
+        </div>
       </div>
     );
   };
@@ -68,7 +70,11 @@ const TempDashboard = ({ children }: Props) => {
         </>
       )}
       {session ? (
-        <main className="relative w-full px-6 pt-24 pb-16">{children}</main>
+        <main className="relative w-full px-6 pt-24 pb-16">
+          <div className="mockup-window border bg-base-300 px-6 py-6">
+            {children}
+          </div>
+        </main>
       ) : (
         <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
           <Login />

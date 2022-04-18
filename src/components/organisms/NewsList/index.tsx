@@ -44,8 +44,8 @@ const NewsList = () => {
 
   return newsList ? (
     <div className="overflow-x-auto">
+      <p className="text-center text-2xl">News List</p>
       <div className="flex w-full items-center space-x-4 pl-4">
-        <p>News List</p>
         <button
           onClick={() => {
             setValue('id', undefined);

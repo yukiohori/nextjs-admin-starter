@@ -37,14 +37,18 @@ const Home: NextPage = () => {
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="z-10 rounded bg-white/50 p-4">
-            <h1 className="mb-4 text-center font-bold text-gray-600">LOGIN</h1>
-            <button
-              onClick={() => loginWithGithub()}
-              className="btn btn-active"
-            >
-              LOGIN WITH GITHUB
-            </button>
+          <div className="mockup-code">
+            <h1 className="mb-4 text-center text-2xl font-bold">LOGIN</h1>
+            <div className="flex w-full items-center justify-center">
+              <button
+                onClick={() => {
+                  loginWithGithub();
+                }}
+                className="btn btn-active"
+              >
+                LOGIN WITH GITHUB
+              </button>
+            </div>
           </div>
         )}
       </TemplateLogin>

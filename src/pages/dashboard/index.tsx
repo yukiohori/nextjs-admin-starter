@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import InfoIcon from '@/components/atoms/Icon/InfoIcon';
 import TempDashboard from '@/components/templates/TempDashboard';
 
 const Dashboard: NextPage = () => {
@@ -12,10 +13,10 @@ const Dashboard: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TempDashboard>
-        <div className="mockup-phone">
-          <div className="camera"></div>
-          <div className="display">
-            <div className="phone-1 artboard artboard-demo">Hi.</div>
+        <div className="alert alert-info shadow-lg">
+          <div>
+            <InfoIcon />
+            <span>News List CRUD done.</span>
           </div>
         </div>
       </TempDashboard>
