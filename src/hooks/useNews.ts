@@ -24,7 +24,7 @@ const useUser = () => {
     } = await supabase
       .from('news')
       .select('*', { count: 'exact' })
-      .range(pag * NEWS_MAX_PAGE_SHOW, (pag + 1) * NEWS_MAX_PAGE_SHOW)
+      .range(pag * NEWS_MAX_PAGE_SHOW, (pag + 1) * NEWS_MAX_PAGE_SHOW - 1)
       .order('id', { ascending: false });
     if (error) {
       handleError(error);
@@ -35,6 +35,7 @@ const useUser = () => {
     dispatch({ type: 'STOP_SILENCE' });
   }, []);
 
+  // TODO: Improve Search
   const searchNews = useCallback(async (search: string) => {
     if (search.trim().length > 0) {
       const { data: news, error } = await supabase

@@ -30,7 +30,6 @@ const NewsList = () => {
     deleteNews,
     upsertNews,
     onChangePagination,
-    searchNews,
   } = useNews();
 
   const onSubmit = (data: any) => {
@@ -57,13 +56,6 @@ const NewsList = () => {
         >
           <AddIcon />
         </button>
-        <input
-          type="text"
-          placeholder="Search"
-          className="input-bordered input"
-          {...register('search')}
-          onChange={(e) => searchNews(e.target.value)}
-        />
       </div>
       <table className="mt-6 table w-full">
         <thead>
