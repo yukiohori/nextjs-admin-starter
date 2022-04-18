@@ -29,7 +29,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>NextJS ADMIN STARTER</title>
+        <title>Login | NAS</title>
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -12,6 +12,16 @@ export const reducer = (state: State, action: Action) => {
         ...state,
         isLoading: false,
       };
+    case 'START_SILENCE':
+      return {
+        ...state,
+        isSilence: true,
+      };
+    case 'STOP_SILENCE':
+      return {
+        ...state,
+        isSilence: false,
+      };
     default:
       return state;
   }

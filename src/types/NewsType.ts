@@ -9,4 +9,5 @@ export type NewsFormType = {
   id?: number;
   title: string;
   content: string;
+  search?: string;
 };

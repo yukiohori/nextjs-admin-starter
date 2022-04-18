@@ -6,7 +6,7 @@ const Context = createContext<{
   state: State;
   dispatch: Dispatch<Action>;
 }>({
-  state: { isLoading: false },
+  state: { isLoading: false, isSilence: false },
   dispatch: () => {},
 });
 

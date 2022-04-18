@@ -8,7 +8,7 @@ const Dashboard: NextPage = () => {
   return (
     <div className="h-screen">
       <Head>
-        <title>NextJS ADMIN STARTER</title>
+        <title>Notification | NAS</title>
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
