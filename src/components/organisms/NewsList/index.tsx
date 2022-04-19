@@ -8,6 +8,7 @@ import EditIcon from '@/components/atoms/Icon/EditIcon';
 import TrashIcon from '@/components/atoms/Icon/TrashIcon';
 import Modal from '@/components/atoms/Modal';
 import Spinner from '@/components/atoms/Spinner';
+import ConfirmModal from '@/components/molecules/ConfirmModal';
 import useNews from '@/hooks/useNews';
 import { NewsFormType } from '@/types/NewsType';
 
@@ -62,7 +63,11 @@ const NewsList = () => {
           <tr>
             <th className={clsx(selectedList.length && 'flex justify-center')}>
               {selectedList.length > 0 && (
-                <button onClick={deleteNews}>
+                <button
+                  onClick={() =>
+                    document.getElementById('confirmModal')?.click()
+                  }
+                >
                   <TrashIcon />
                 </button>
               )}
@@ -125,7 +130,7 @@ const NewsList = () => {
         </div>
       )}
 
-      <Modal>
+      <Modal modalId="modal">
         <h3 className="mb-4">ADD NEWS</h3>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <input type="hidden" {...register('id')} />
@@ -161,6 +166,30 @@ const NewsList = () => {
           </button>
         </form>
       </Modal>
+      <ConfirmModal
+        modalId="confirmModal"
+        option={
+          <div className="flex w-full flex-col items-center justify-between space-y-4">
+            <button
+              onClick={() => document.getElementById('confirmModal')?.click()}
+              className="btn w-full"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => {
+                document.getElementById('confirmModal')?.click();
+                deleteNews();
+              }}
+              className="btn w-full"
+            >
+              Yes
+            </button>
+          </div>
+        }
+      >
+        <p>Are you sure to delete?</p>
+      </ConfirmModal>
     </div>
   ) : (
     <div className="flex h-full w-full items-center justify-center">
