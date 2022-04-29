@@ -15,7 +15,7 @@ This is my own Admin Project starter.
 ## ToDo List
 
 - [x] Github Auth Login
-- [ ] Dashboard
+- [x] Dashboard
 - [ ] Profile (Edit, upload Profile Image)
 - [ ] Blog CRUD
 - [ ] Notification

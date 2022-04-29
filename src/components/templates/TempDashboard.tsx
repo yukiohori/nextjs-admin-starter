@@ -1,14 +1,13 @@
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
-import SideMenu from 'src/components/molecules/SideMenu';
-import { supabase } from 'src/lib/supabaseClient';
-import { FOOTER_TEXT } from 'src/utils/constants';
 
+import Spinner from '@/components/atoms/Spinner';
+import SideMenu from '@/components/molecules/SideMenu';
 import Footer from '@/components/organisms/Footer';
 import Header from '@/components/organisms/Header';
 import useUser from '@/hooks/useUser';
-
-import Spinner from '../atoms/Spinner';
+import { supabase } from '@/lib/supabaseClient';
+import { FOOTER_TEXT } from '@/utils/constants';
 
 type Props = {
   children: React.ReactNode;
