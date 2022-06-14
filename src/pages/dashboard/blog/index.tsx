@@ -1,22 +1,22 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import NewsList from '@/components/organisms/NewsList';
+import Editor from '@/components/atoms/Editor';
 import TempDashboard from '@/components/templates/TempDashboard';
 
-const Notification: NextPage = () => {
+const Blog: NextPage = () => {
   return (
     <div className="h-screen">
       <Head>
-        <title>Notification | NAS</title>
+        <title>Blog | NAS</title>
         <meta name="description" content="NextJS ADMIN STARTER" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TempDashboard>
-        <NewsList />
+        <Editor />
       </TempDashboard>
     </div>
   );
 };
 
-export default Notification;
+export default Blog;

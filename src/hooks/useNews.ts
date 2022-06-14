@@ -14,7 +14,7 @@ const useUser = () => {
   const [pagination, setPagination] = useState<number>(0);
   const [newsListCount, setNewsListCount] = useState<number>(0);
 
-  const fetchNewsList = useCallback(async (pag: number = 0) => {
+  const fetchNewsList = useCallback(async (page: number = 0) => {
     if (state.isSilence) return;
     dispatch({ type: 'START_SILENCE' });
     const {
@@ -24,7 +24,7 @@ const useUser = () => {
     } = await supabase
       .from('news')
       .select('*', { count: 'exact' })
-      .range(pag * NEWS_MAX_PAGE_SHOW, (pag + 1) * NEWS_MAX_PAGE_SHOW - 1)
+      .range(page * NEWS_MAX_PAGE_SHOW, (page + 1) * NEWS_MAX_PAGE_SHOW - 1)
       .order('id', { ascending: false });
     if (error) {
       handleError(error);
@@ -101,7 +101,7 @@ const useUser = () => {
   );
 
   const onChangePagination = useCallback(
-    async (index) => {
+    async (index: number) => {
       if (index === pagination && state.isSilence) return;
       setPagination(index);
       await fetchNewsList(index);
