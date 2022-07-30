@@ -6,7 +6,7 @@ This is my own Admin Project starter.
 
 - NextJs
 - Supabase
-- TailwindCSS
+- TailwindCSS (with daisyui)
 - Storybook
 
 ## Design Structure
@@ -41,6 +41,7 @@ yarn dev
 - [x] Github Auth Login
 - [x] Dashboard
 - [x] News CRUD
+- [x] Storybook ("@storybook/addon-postcss": "^3.0.0-alpha.1" has logger error)
 - [ ] Profile (Edit, upload Profile Image)
 - [ ] Blog CRUD
-- [ ] Storybook
+
