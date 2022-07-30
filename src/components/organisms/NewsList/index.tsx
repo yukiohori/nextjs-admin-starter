@@ -131,7 +131,7 @@ const NewsList = () => {
       )}
 
       <Modal modalId="modal">
-        <h3 className="mb-4">ADD NEWS</h3>
+        <h3 className="mb-4">ADD NOTIFICATION</h3>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <input type="hidden" {...register('id')} />
           <label className="label">
@@ -162,10 +162,11 @@ const NewsList = () => {
             {...register('content', { required: true })}
           ></textarea>
           <button type="submit" className="btn w-full">
-            Button
+            Save
           </button>
         </form>
       </Modal>
+
       <ConfirmModal
         modalId="confirmModal"
         option={
